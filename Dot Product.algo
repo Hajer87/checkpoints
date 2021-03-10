@@ -1,0 +1,30 @@
+//PROCEDURE
+PROCEDURE DOT_PRODUCT (Var Ps: INTEGER  V1,V2:ARRAY_OF INTEGER)
+VAR
+ i: INTEGER:=0;
+BEGIN
+ FOR i FROM 0 TO V1.lenght-1 DO
+  Ps:= Ps+V1[i]*V2[i];
+ END_FOR
+  write (Ps)
+END
+
+//ALGORITHM 
+ALGORITHM VECTEURS_ORTHOGONAUX
+VAR
+ V1, V2: ARRAY_OF INTEGER;
+ i,j: INTEGER:=0;
+ Ps: INTEGER;
+BEGIN
+ read(n);
+ FOR j FROM 0 TO n-1 DO
+ FOR i FROM 0 TO 1 DO
+  read (V1[i]);
+  read (V2[i]);
+ END_FOR
+ DOT_PRODUCT(Ps, V1, V2);   
+ IF (Ps==0) THEN
+  write("vectors  are orthogonal");
+  END_IF
+ END_FOR
+END

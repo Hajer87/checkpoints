@@ -1,0 +1,53 @@
+ALGORITHM Problem 1, Solution 2
+VAR
+       SET1 : ARRAY_OF INTEGER[];
+       SET2 : ARRAY_OF INTEGER[];
+       htab: HASH_TABLE<INTEGER,INTEGER>
+       i,j,SUM: INTEGER:=0;
+       count: INTEGER:=1;
+
+BEGIN
+//remplir les tableaux
+ FOR i FROM 0 TO SET1.lenght STEP 1  DO
+  READ (SET1[i]);
+END_FOR
+ FOR i FROM 0 TO SET2.lenght STEP 1  DO
+  READ (SET2[i]);
+ END_FOR
+ 
+//remplir hashtable
+ FOR i FROM 0 TO SET1.lenght STEP 1  DO
+    
+ IF (htab.lookup(SET1[i])=TRUE) THEN
+       htab.get(SET1[i]):= count+1;
+ ELSE
+       htab.put(SET1[i],1);
+ END_IF
+END_FOR
+
+FOR  FROM 0 TO SET2.lenght STEP 1  DO
+ IF (htab.lookup(SET2[i])=TRUE) THEN
+       htab.get(SET2[i]:= count+1
+ ELSE
+       htab.put(SET2[i],1)
+ END_IF
+END_FOR
+
+  // parcourir hashtable et calculer la somme
+FOR i FROM O TO SET1.lenght STEP 1  DO
+     IF (htab.get( SET1[i])==1)) THEN
+       SUM:= SUM+SET1[i]
+     break;
+       END_IF
+END_FOR
+
+FOR i FROM O TO SET2.lenght STEP 1  DO
+     IF (htab.get(SET2[i])==1)) THEN
+       SUM:= SUM+SET2[i]
+     break;
+       END_IF
+END_FOR
+// afficher la somme
+ write (SUM)
+
+END

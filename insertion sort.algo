@@ -1,0 +1,28 @@
+PROCEDURE INSERTION_SORT(arr : ARRAY_OF INTEGER)
+VAR
+      i,j, card: INTEGER;
+BEGIN
+      FOR i FROM 0 TO arr.lenght-1 STEP 1  DO
+      card:=arr[i]
+            j:=i-1;
+            while(j>=0 and card<arr[j])
+                  arr[j+1]:=arr[j];
+                  j=j-1;
+            END_FOR                
+            arr[j+1]:=arr[i];
+      END_FOR
+END
+
+ALGORITHM INSERTION
+VAR
+      arr : ARRAY_OF INTEGER;
+      i: INTEGER :=0;
+
+BEGIN
+      FOR i FROM 0 TO arr.lenght-1 STEP 1  DO
+      read (arr[i])
+      END_FOR
+     INSERTION_SORT(arr);
+     write (arr);
+      
+END

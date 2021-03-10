@@ -1,0 +1,35 @@
+ALGORITHM Problem 1, Solution 1 
+VAR
+       SET1 : ARRAY_OF INTEGER[];
+       SET2 : ARRAY_OF INTEGER[];
+       SUM,i,j: INTEGER:=0;
+       
+BEGIN
+//remplir les deux tableaux
+ FOR i FROM 0 TO SET1.lenght-1 STEP 1  DO
+  READ (SET1[i]);
+END_FOR
+ FOR j FROM 0 TO SET2.lenght-1 STEP 1  DO
+  READ (SET2[j]);
+ END_FOR
+ //calcul somme
+ FOR i FROM 0 TO SET1.lenght-1 STEP 1  DO
+      WHILE (SET1[i]<>SET2[j] and j<SET2.length-1) DO
+           IF (j==SET2[j].lenght) THEN
+                 SUM:=SUM+SET1[i]
+           ELSE
+                 j:=j+1;
+           END_IF
+           END_WHILE    
+      END_FOR
+ FOR i FROM 0 TO SET2.lenght-1 STEP 1  DO
+           WHILE (SET1[i]<>SET2[j] and j<SET1.lenght-1) DO
+           IF (j==SET1[j].lenght) THEN
+                 SUM:=SUM+SET2[i]
+           ELSE
+                 j:=j+1;
+           END_IF
+           END_WHILE     
+ END_FOR
+ WRITE (SUM)
+END

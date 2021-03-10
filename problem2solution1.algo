@@ -1,0 +1,24 @@
+ALGORITHM problem2
+VAR
+      SET1 : ARRAY_OF INTEGER[];
+       SET2 : ARRAY_OF INTEGER[];
+       SUM,i,j: INTEGER:=0;
+BEGIN
+//remplir les deux tableaux
+ FOR i FROM 0 TO SET1.lenght-1 STEP 1  DO
+  READ (SET1[i]);
+END_FOR
+ FOR J FROM 0 TO SET2.lenght-1 STEP 1  DO
+  READ (SET2[j]);
+ END_FOR
+// calcul somme
+ FOR i FROM 0 TO SET1.lenght-1 STEP 1  DO
+ FOR j FROM 0 TO SET2.lenght-1 STEP 1  DO
+ WHILE (SET2[j]==SET1[i]) DO
+ SUM:= SUM+(2*SET1[i]); 
+ END_WHILE
+ END_FOR
+ END_FOR
+ write(SUM)
+
+END
