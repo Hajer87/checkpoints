@@ -1,0 +1,30 @@
+ALGORITHM COUNTER
+VAR
+      str:= STRING;
+       countWords, countVoyelles, countChar, i:= INTEGER:=0;
+
+BEGIN
+
+      Write("write a sentence:")
+      Read(str);
+      
+      
+      WHILE (str[i]<> ".") DO
+            IF (str[i] = " " OR str[i]=".") THEN
+                  countwords:= countwords+1;   
+            END_IF 
+            
+             IF (str[i]="a"OR str[i]="e"OR str[i]="o" OR str[i]="i" OR str[i]="u"OR str[i]="y") THEN
+                 countVoyelles:= countVoyelles + 1;
+            END_IF
+            i:=i+1;
+             
+
+      END_WHILE
+
+     countChar:= i-1;
+      Write(" The length of the sentence (the number of characters):", countChar);
+      Write("The number of words in the sentence:", countWords);
+      Write("The number of vowels in the sentence:", countVoyelles;)
+      
+END
